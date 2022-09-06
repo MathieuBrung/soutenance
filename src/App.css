@@ -1,38 +1,222 @@
-.App {
-  text-align: center;
+:root {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    font-size: 26px;
+
+    --bg-color: #e6e6e6;
+    --ligth-color: #ffffff;
+    --dark-color: #b8b8b8;
+
+    --icon-size: 100px;
+    --icon-size-small: calc(var(--icon-size) - 20px);
+    --icon-size-large: calc(var(--icon-size) + 60px);
+    --icon-margin: 20px;
+
+    --vertical-separator-width: 10px;
+    --container-border-radius: 10px;
+
+    --h1Y: 15vh;
+
+    --c0X: 30vw;
+    --c0Y: -5vh;
+
+    --c1X: 120vw;
+    --c2X: 120vw;
+    --c3X: 120vw;
+
+    --s1X: 120vw;
+    --s2X: 120vw;
+
+    --step: 1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,
+h2,
+h3 {
+    padding: 0;
+    margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+    font-size: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h2,
+h3 {
+    font-size: 0.7rem;
 }
 
-.App-link {
-  color: #61dafb;
+div {
+    transition: all 0.3s linear;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#appContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-color);
+    min-height: 100vh;
+}
+
+#headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18vh;
+    width: 100%;
+}
+
+#contentContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-evenly; */
+    height: 80vh;
+    width: 100%;
+}
+
+.neumorphism {
+    background: var(--bg-color);
+    box-shadow: 3px 3px 5px var(--dark-color),
+        -3px -3px 5px var(--ligth-color);
+}
+
+.neumorphismInner {
+    background: var(--bg-color);
+    box-shadow: inset 3px 3px 5px var(--dark-color),
+        inset -3px -3px 5px var(--ligth-color);
+}
+
+.icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+
+.iconSmall {
+    width: var(--icon-size-small);
+    height: var(--icon-size-small);
+}
+
+.iconLarge {
+    width: var(--icon-size-large);
+    height: var(--icon-size-large);
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: calc(100vw / var(--step));
+    height: 100%;
+    padding-top: 4%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100%;
+}
+
+.spacer {
+    margin-bottom: var(--icon-margin);
+}
+
+.rowSpacer {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.columnHeader {
+    width: 40%;
+    padding: 10px 20px;
+    border-radius: var(--container-border-radius);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.headerTextWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    height: 75%;
+    border-radius: var(--container-border-radius);
+    text-align: center;
+}
+
+
+.iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(var(--icon-size) + var(--icon-margin));
+    height: calc(var(--icon-size) + var(--icon-margin));
+    border-radius: calc((var(--icon-size) + var(--icon-margin)) / 2);
+}
+
+.iconWrapperSmall {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(var(--icon-size-small) + var(--icon-margin));
+    height: calc(var(--icon-size-small) + var(--icon-margin));
+    border-radius: calc((var(--icon-size-small) + var(--icon-margin)) / 2);
+}
+
+.iconWrapperLarge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(var(--icon-size-large) + var(--icon-margin));
+    height: calc(var(--icon-size-large) + var(--icon-margin));
+    border-radius: calc((var(--icon-size-large) + var(--icon-margin)) / 2);
+}
+
+.iconsWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: var(--icon-margin);
+    padding-right: var(--icon-margin);
+    width: calc(var(--icon-size-small) * 2.7);
+    height: calc(var(--icon-size-small) + var(--icon-margin) * 2.3);
+    border-radius: calc(calc(var(--icon-size-small) + var(--icon-margin) * 2.3) / 2);
+}
+
+.verticalSeparator {
+    height: 75vh;
+    width: var(--vertical-separator-width);
+    border-radius: calc(var(--vertical-separator-width) / 2);
+}
+
+
+.h1Animation {
+    transform: translateY(var(--h1Y));
+}
+.c0Animation {
+    transform: translate(var(--c0X), var(--c0Y));
+}
+.c1Animation {
+    transform: translateX(var(--c1X));
+}
+.c2Animation {
+    transform: translateX(var(--c2X));
+}
+.c3Animation {
+    transform: translateX(var(--c3X));
+}
+
+.s1Animation {
+    transform: translateX(var(--s1X));
+}
+.s2Animation {
+    transform: translateX(var(--s2X));
 }
