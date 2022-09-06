@@ -22,28 +22,40 @@ function App() {
         document.documentElement.style.setProperty(CSSProperty, `${nValue}vh`);
     }
 
+    const setCSSPropertyDisplay = (CSSProperty, nValue) => {
+        document.documentElement.style.setProperty(CSSProperty, nValue);
+    }
+
+    const setCSSPropertyInt = (CSSProperty, nValue) => {
+        document.documentElement.style.setProperty(CSSProperty, nValue);
+    }
+
     const handleSteps = () => {
         if (step > 3) return;
         if (step === 1) {
-            setCSSPropertyVH('--h1Y', 5);
-            setCSSPropertyVH('--c0Y', 100);
-            setCSSPropertyVW('--c1X', 0);
+            setCSSPropertyVH('--c0X', 0);
+            setCSSPropertyInt('--c0Opacity', 0);
+            setTimeout(() => {
+                setCSSPropertyDisplay('--display-c0', 'none');
+                setCSSPropertyVH('--h1Y', 5);
+                setCSSPropertyVW('--c1X', 33.5);
+            }, 300);
 
         } else if (step === 2) {
-            setCSSPropertyVW('--c1X', -30);
-            setCSSPropertyVW('--s1X', -15);
-            setCSSPropertyVW('--c2X', -0);
+            setCSSPropertyVW('--c1X', 10);
+            setCSSPropertyVW('--s1X', 17);
+            setCSSPropertyVW('--c2X', 24);
 
         } else if (step === 3) {
-            setCSSPropertyVW('--c1X', -45);
-            setCSSPropertyVW('--s1X', -36.5);
-            setCSSPropertyVW('--c2X', -26.5);
-            setCSSPropertyVW('--s2X', -17);
-            setCSSPropertyVW('--c3X', -8.5);
+            setCSSPropertyVW('--c1X', 3);
+            setCSSPropertyVW('--s1X', 5.5);
+            setCSSPropertyVW('--c2X', 12.5);
+            setCSSPropertyVW('--s2X', 18.5);
+            setCSSPropertyVW('--c3X', 22);
         }
 
         const newStep = (step + 1);
-        document.documentElement.style.setProperty('--step', newStep);
+        setCSSPropertyInt('--step', newStep);
         setStep(newStep);
     }
 
@@ -85,65 +97,69 @@ function App() {
                     <div className='neumorphism iconWrapper'>
                         <img src={idea} alt='idea' className='icon' />
                     </div>
-
                 </div>
 
-                <div className='verticalSeparator neumorphism s1Animation' />
+                {
+                    step > 1 ?
+                        <>
+                            <div className='verticalSeparator neumorphism s1Animation' />
 
-                <div className='column c2Animation'>
-                    <div className='columnHeader neumorphism'>
-                        <h3>Pendant</h3>
-                    </div>
+                            <div className='column c2Animation'>
+                                <div className='columnHeader neumorphism'>
+                                    <h3>Pendant</h3>
+                                </div>
 
-                    <div className='neumorphismInner iconsWrapper'>
-                        <div className='neumorphism iconWrapperSmall'>
-                            <img src={cgi} alt='cgi' className='iconSmall' />
-                        </div>
+                                <div className='neumorphismInner iconsWrapper'>
+                                    <div className='neumorphism iconWrapperSmall'>
+                                        <img src={cgi} alt='cgi' className='iconSmall' />
+                                    </div>
 
-                        <div className='neumorphism iconWrapperSmall'>
-                            <img src={edf} alt='edf' className='iconSmall' />
-                        </div>
-                    </div>
+                                    <div className='neumorphism iconWrapperSmall'>
+                                        <img src={edf} alt='edf' className='iconSmall' />
+                                    </div>
+                                </div>
 
-                    <div className='spacer' />
+                                <div className='spacer' />
 
-                    <div className='neumorphism iconWrapper'>
-                        <img src={rn} alt='rn' className='icon' />
-                    </div>
+                                <div className='neumorphism iconWrapper'>
+                                    <img src={rn} alt='rn' className='icon' />
+                                </div>
 
-                    <div className='spacer' />
+                                <div className='spacer' />
 
-                    <div className='neumorphism iconWrapper'>
-                        <img src={MaEVA} alt='MaEVA' className='icon' />
-                    </div>
+                                <div className='neumorphism iconWrapper'>
+                                    <img src={MaEVA} alt='MaEVA' className='icon' />
+                                </div>
 
-                </div>
+                            </div>
 
-                <div className='verticalSeparator neumorphism s2Animation' />
+                            <div className='verticalSeparator neumorphism s2Animation' />
 
-                <div className='column c3Animation'>
-                    <div className='columnHeader neumorphism'>
-                        <h3>Après</h3>
-                    </div>
+                            <div className='column c3Animation'>
+                                <div className='columnHeader neumorphism'>
+                                    <h3>Après</h3>
+                                </div>
 
-                    <div className='neumorphism iconWrapper'>
-                        <img src={onlineLearning} alt='onlineLearning' className='icon' />
-                    </div>
+                                <div className='neumorphism iconWrapper'>
+                                    <img src={onlineLearning} alt='onlineLearning' className='icon' />
+                                </div>
 
-                    <div className='spacer' />
+                                <div className='spacer' />
 
-                    <div className='neumorphism iconWrapper'>
-                        <img src={development} alt='development' className='icon' />
-                    </div>
+                                <div className='neumorphism iconWrapper'>
+                                    <img src={development} alt='development' className='icon' />
+                                </div>
 
-                    <div className='spacer' />
+                                <div className='spacer' />
 
-                    <div className='neumorphism iconWrapper'>
-                        <img src={troisPoints} alt='troisPoints' className='icon' />
-                    </div>
+                                <div className='neumorphism iconWrapper'>
+                                    <img src={troisPoints} alt='troisPoints' className='icon' />
+                                </div>
 
-                </div>
-
+                            </div>
+                        </>
+                        : null
+                }
 
 
             </div>

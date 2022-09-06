@@ -13,13 +13,16 @@
     --icon-size-large: calc(var(--icon-size) + 60px);
     --icon-margin: 20px;
 
-    --vertical-separator-width: 10px;
+    --vertical-separator-width: 8px;
     --container-border-radius: 10px;
 
     --h1Y: 15vh;
 
-    --c0X: 30vw;
+    --display-c0: flex;
+
+    --c0X: 24.5vw;
     --c0Y: -5vh;
+    --c0Opacity: 1;
 
     --c1X: 120vw;
     --c2X: 120vw;
@@ -71,10 +74,8 @@ div {
 #contentContainer {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    /* justify-content: space-evenly; */
     height: 80vh;
-    width: 100%;
+    width: 100vw;
 }
 
 .neumorphism {
@@ -108,10 +109,9 @@ div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
     width: calc(100vw / var(--step));
     height: 100%;
-    padding-top: 4%;
+    padding-top: 30px;
 }
 
 .row {
@@ -120,7 +120,6 @@ div {
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 100%;
 }
 
 .spacer {
@@ -137,7 +136,7 @@ div {
     padding: 10px 20px;
     border-radius: var(--container-border-radius);
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .headerTextWrapper {
@@ -203,6 +202,8 @@ div {
 }
 .c0Animation {
     transform: translate(var(--c0X), var(--c0Y));
+    display: var(--display-c0);
+    opacity: var(--c0Opacity);
 }
 .c1Animation {
     transform: translateX(var(--c1X));
