@@ -38,13 +38,13 @@ function App() {
             setTimeout(() => {
                 setCSSPropertyDisplay('--display-c0', 'none');
                 setCSSPropertyVH('--h1Y', 5);
-                setCSSPropertyVW('--c1X', 38);
+                setCSSPropertyVW('--c1X', 42.5);
             }, 300);
 
         } else if (step === 2) {
-            setCSSPropertyVW('--c1X', 17);
-            setCSSPropertyVW('--s1X', 26);
-            setCSSPropertyVW('--c2X', 35);
+            setCSSPropertyVW('--c1X', 18);
+            setCSSPropertyVW('--s1X', 31);
+            setCSSPropertyVW('--c2X', 40);
 
         } else if (step === 3) {
             setCSSPropertyVW('--c1X', 4);
