@@ -172,21 +172,21 @@ function App() {
 
                                 <div className='neumorphismInner textsWrapper'>
                                     <div className='neumorphism textWrapper'>
-                                        {/* <h4 style={{ color: '#009DE0' }}>IUT</h4> */}
                                         <div className='neumorphismInner iconWrapperSmall'>
                                             <img src={iut} alt='iut' className='iconSmall' />
                                         </div>
+                                        <span />
                                         <span>Nicholas JOURNET</span>
                                         <span>Olivier GUIBERT</span>
                                         <span>Les intervenants</span>
-                                        <span>Les professeurs</span>
+                                        <span>Les enseignants</span>
                                     </div>
 
                                     <div className='neumorphism textWrapper'>
-                                        {/* <h4 style={{ color: '#E31937' }}>CGI</h4> */}
                                         <div className='neumorphismInner iconWrapperSmall'>
                                             <img src={cgi} alt='cgi' className='iconSmall' />
                                         </div>
+                                        <span />
                                         <span>Damien BREANT</span>
                                         <span>Peter GILBERT</span>
                                         <span>Adrien MICOL</span>
