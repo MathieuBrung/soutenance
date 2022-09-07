@@ -31,32 +31,36 @@ function App() {
     }
 
     const handleSteps = () => {
-        if (step > 3) return;
+        if (step > 4) return;
         if (step === 1) {
             setCSSPropertyVH('--c0X', 0);
             setCSSPropertyInt('--c0Opacity', 0);
             setTimeout(() => {
                 setCSSPropertyDisplay('--display-c0', 'none');
                 setCSSPropertyVH('--h1Y', 5);
-                setCSSPropertyVW('--c1X', 33.5);
+                setCSSPropertyVW('--c1X', 38);
             }, 300);
 
         } else if (step === 2) {
-            setCSSPropertyVW('--c1X', 10);
-            setCSSPropertyVW('--s1X', 17);
-            setCSSPropertyVW('--c2X', 24);
+            setCSSPropertyVW('--c1X', 17);
+            setCSSPropertyVW('--s1X', 26);
+            setCSSPropertyVW('--c2X', 35);
 
         } else if (step === 3) {
-            setCSSPropertyVW('--c1X', 3);
-            setCSSPropertyVW('--s1X', 5.5);
-            setCSSPropertyVW('--c2X', 12.5);
+            setCSSPropertyVW('--c1X', 4);
+            setCSSPropertyVW('--s1X', 7);
+            setCSSPropertyVW('--c2X', 13);
             setCSSPropertyVW('--s2X', 18.5);
             setCSSPropertyVW('--c3X', 22);
+        } else if (step === 4) {
+            setCSSPropertyInt('--opacity', 0);
+            setCSSPropertyVH('--c4Y', 0);
         }
 
         const newStep = (step + 1);
-        setCSSPropertyInt('--step', newStep);
         setStep(newStep);
+        if (step > 3) return;
+        setCSSPropertyInt('--step', newStep);
     }
 
     return (
@@ -157,9 +161,46 @@ function App() {
                                 </div>
 
                             </div>
+
+
+                            <div className='column c4Animation'>
+                                <div className='neumorphism columnHeader'>
+                                    <h3>Remerciements</h3>
+                                </div>
+
+                                <div className='spacer' />
+
+                                <div className='neumorphismInner textsWrapper'>
+                                    <div className='neumorphism textWrapper'>
+                                        {/* <h4 style={{ color: '#009DE0' }}>IUT</h4> */}
+                                        <div className='neumorphismInner iconWrapperSmall'>
+                                            <img src={iut} alt='iut' className='iconSmall' />
+                                        </div>
+                                        <span>Nicholas JOURNET</span>
+                                        <span>Olivier GUIBERT</span>
+                                        <span>Les intervenants</span>
+                                        <span>Les professeurs</span>
+                                    </div>
+
+                                    <div className='neumorphism textWrapper'>
+                                        {/* <h4 style={{ color: '#E31937' }}>CGI</h4> */}
+                                        <div className='neumorphismInner iconWrapperSmall'>
+                                            <img src={cgi} alt='cgi' className='iconSmall' />
+                                        </div>
+                                        <span>Damien BREANT</span>
+                                        <span>Peter GILBERT</span>
+                                        <span>Adrien MICOL</span>
+                                        <span>Loïc HELARY</span>
+                                        <span>Alexandre MAILLARD</span>
+                                        <span>Juliette COUTURAS</span>
+                                    </div>
+                                </div>
+
+                            </div>
                         </>
                         : null
                 }
+
 
 
             </div>
