@@ -2,17 +2,17 @@
     overflow: hidden;
     padding: 0;
     margin: 0;
-    font-size: 26px;
+    font-size: 30px;
     color: #404040;
 
     --bg-color: #e6e6e6;
     --ligth-color: #ffffff;
     --dark-color: #b8b8b8;
 
-    --icon-size: 100px;
+    --icon-size: 130px;
     --icon-size-small: calc(var(--icon-size) - 20px);
     --icon-size-large: calc(var(--icon-size) + 60px);
-    --icon-margin: 20px;
+    --icon-margin: 24px;
 
     --vertical-separator-width: 8px;
     --container-border-radius: 10px;
